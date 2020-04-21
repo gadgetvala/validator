@@ -1,0 +1,239 @@
+@import url('https://fonts.googleapis.com/css2?family=Allerta+Stencil&display=swap');
+
+:root {
+	font-size: 10px;
+}
+
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	font-family: sans-serif;
+	background: #304352;
+	background: -webkit-linear-gradient(to left, #d7d2cc, #304352);
+	background: linear-gradient(to left, #d7d2cc, #304352);
+}
+
+.container {
+	height: 100vh;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	align-items: center;
+	width: 70%;
+	margin: 0 auto;
+}
+
+.header {
+	font-family: 'Allerta Stencil', sans-serif;
+	margin: 4rem;
+	text-align: center;
+	letter-spacing: 0.3rem;
+	font-size: 3rem;
+	color: #cfffc2;
+}
+
+/*Inputs Bar*/
+.inputbar {
+	margin-top: 2rem;
+	margin-bottom: 1rem;
+	width: 100%;
+}
+
+.inputbar input {
+	border-top: 0;
+	border-left: 0;
+	border-right: 0;
+	border-bottom: 0;
+	width: 100%;
+	padding: 0.8rem;
+	font-size: 2.5rem;
+	background: #cfffc2a6;
+	border-radius: 0.5rem;
+}
+
+/*Controller*/
+.controller {
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	width: 100%;
+	font-size: 2rem;
+	margin-top: 5rem;
+}
+
+.controller__list .item {
+	margin: 1rem;
+	padding: 0.5rem;
+}
+
+.controller__list .item input {
+	margin-right: 0.5rem;
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 53px;
+  height: 26px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 1px;
+  bottom: 0px;
+  background-color: white;
+  -webkit-transition: .2s;
+  transition: .2s;
+}
+
+input:checked + .slider {
+  background-color: #adf799a6;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #adf799a6;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+/*Footer*/
+footer {
+	margin: 2rem 0 1rem 0;
+	text-align: center;
+	font-size: 2rem;
+	font-weight: 400;
+	letter-spacing: 0.3rem;
+	text-transform: uppercase;
+}
+
+.heart {
+	color: #e52c19;
+	font-size: 2.5rem;
+}
+
+/*helper*/
+.alert {
+	display: none;
+	width: 100%;
+	padding: 1rem;
+	margin-bottom: 4rem;
+	font-size: 1.5rem;
+	background: #fae8e8;
+	border: 0.2rem solid red;
+}
+
+.wrong input {
+	border-top: 0;
+	border-left: 0;
+	border-right: 0;
+	border-bottom: 0 !important;
+	background: #ec505061;
+	width: 100%;
+	padding: 0.8rem;
+	font-size: 2.5rem;
+	border-radius: 0.5rem;
+}
+
+/*Media Queries*/
+@media (max-width: 400px) {
+	:root {
+		font-size: 9px;
+	}
+
+	.container {
+		width: 90%;
+	}
+
+	.controller {
+		flex-direction: column;
+	}
+
+	.controller__list .item input {
+		margin-right: 0.8rem;
+	}
+
+	footer {
+		font-size: 1.5rem;
+		letter-spacing: 0.2rem;
+	}
+
+	.heart {
+		color: #e52c19;
+		font-size: 2rem;
+	}
+}
+
+@media (min-width: 401px) and (max-width: 640px) {
+	:root {
+		font-size: 9px;
+	}
+
+	.controller {
+		display: grid;
+		grid-template-columns: repeat(2, 48%);
+		grid-gap: 0rem;
+	}
+
+	.controller .last-child {
+		grid-column-start: 1;
+		grid-column-end: span 2;
+		justify-self: center;
+		align-self: center;
+	}
+}
+
+@media (min-width: 641px) and (max-width: 940px) {
+	:root {
+		font-size: 10px;
+	}
+
+	.controller {
+		display: grid;
+		grid-template-columns: repeat(2, 45%);
+		grid-gap: 0rem;
+	}
+
+	.controller .last-child {
+		grid-column-start: 1;
+		grid-column-end: span 2;
+		justify-self: center;
+		align-self: center;
+	}
+}
