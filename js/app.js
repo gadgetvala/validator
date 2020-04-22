@@ -109,92 +109,53 @@ inputbarOnly.addEventListener('change', () => {
 });
 
 function isValidIpAdd(ipaddress) {
-	if (
-		/^(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$/.test(
-			ipaddress
-		)
-	) {
-		return true;
-	}
-	return false;
+	return /^(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$/.test(
+		ipaddress
+	)
+		? true
+		: false;
 }
 
 function isValidMACAddress(macaddress) {
-	if (/^([0-9A-Fa-f]{2}[:-]){5}([0-9A-Fa-f]{2})$/.test(macaddress)) {
-		return true;
-	}
-	return false;
+	return /^([0-9A-Fa-f]{2}[:-]){5}([0-9A-Fa-f]{2})$/.test(macaddress) ? true : false;
 }
 
 function isValidMD5(MD5) {
-	if (/^[a-fA-F0-9]{32}$/.test(MD5)) {
-		return true;
-	}
-	return false;
+	return /^[a-fA-F0-9]{32}$/.test(MD5) ? true : false;
 }
 
 function isValidSHA1(SHA1) {
-	if (/^[a-fA-F0-9]{40}$/.test(SHA1)) {
-		return true;
-	} else {
-		return false;
-	}
+	return /^[a-fA-F0-9]{40}$/.test(SHA1) ? true : false;
 }
 
 function isValidEmail(email) {
-	if (/^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/.test(email)) {
-		return true;
-	} else {
-		return false;
-	}
+	return /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/.test(email) ? true : false;
 }
 
 function isValidAlpha(alpha) {
-	if (/^[a-zA-Z]+$/.test(alpha)) {
-		return true;
-	} else {
-		return false;
-	}
+	return /^[a-zA-Z]+$/.test(alpha) ? true : false;
 }
 
 function isValidUppercase(alpha) {
-	if (/^[A-Z]+$/.test(alpha)) {
-		return true;
-	}
-	return false;
+	return /^[A-Z]+$/.test(alpha) ? true : false;
 }
 
 function isValidlowercase(alpha) {
-	if (/^[a-z]+$/.test(alpha)) {
-		return true;
-	}
-	return false;
+	return /^[a-z]+$/.test(alpha) ? true : false;
 }
 
 function isvalidAlphanumeric(alpha) {
-	if (/^[a-zA-Z0-9_]*$/.test(alpha)) {
-		return true;
-	}
-	return false;
+	return /^[a-zA-Z0-9_]*$/.test(alpha) ? true : false;
 }
 
 function isValidNumber(num) {
-	if (/^[0-9]+$/.test(num)) {
-		return true;
-	}
-	return false;
+	return /^[0-9]+$/.test(num) ? true : false;
 }
 
 function isValidHexColor(code) {
-	if (/^#(?:[0-9a-f]{3}){1,2}$/i.test(code)) {
-		return true;
-	}
-	return false;
+	return /^#(?:[0-9a-f]{3}){1,2}$/i.test(code) ? true : false;
 }
 
 function isValidHexadecimal(code) {
-	if (/0[xX][0-9a-fA-F]+/.test(code)) {
-		return true;
-	}
-	return false;
+	return /0[xX][0-9a-fA-F]+/.test(code) ? true : false;
 }
