@@ -14,12 +14,7 @@ const isMACAddress = document.querySelector('#isMACAddress');
 const isMD5 = document.querySelector('#isMD5');
 const isSHA1 = document.querySelector('#isSHA1');
 
-
-// inputbarOnly.addEventListener('change', () => {
-// 	checkInput();
-// });
-
-function checkInput(){
+function checkInput() {
 	if (isAlpha.checked) {
 		if (isValidAlpha(inputbarOnly.value)) {
 			inputBar.className = 'inputbar';
@@ -105,7 +100,18 @@ function checkInput(){
 			inputBar.className += ' wrong';
 		}
 	}
-};
+}
+
+function turnOff(data) {
+	checkboxList.forEach((el) => {
+		if (el.id == data) {
+			el.checked = true;
+		} else {
+			el.checked = false;
+		}
+	});
+}
+
 function isValidIpAdd(ipaddress) {
 	return /^(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$/.test(
 		ipaddress
@@ -156,14 +162,4 @@ function isValidHexColor(code) {
 
 function isValidHexadecimal(code) {
 	return /0[xX][0-9a-fA-F]+/.test(code) ? true : false;
-}
-
-function turnOff(data) {
-	checkboxList.forEach((el) => {
-		if (el.id == data) {
-			el.checked = true;
-		} else {
-			el.checked = false;
-		}
-	});
 }
