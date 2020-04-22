@@ -14,7 +14,12 @@ const isMACAddress = document.querySelector('#isMACAddress');
 const isMD5 = document.querySelector('#isMD5');
 const isSHA1 = document.querySelector('#isSHA1');
 
-inputbarOnly.addEventListener('change', () => {
+
+// inputbarOnly.addEventListener('change', () => {
+// 	checkInput();
+// });
+
+function checkInput(){
 	if (isAlpha.checked) {
 		if (isValidAlpha(inputbarOnly.value)) {
 			inputBar.className = 'inputbar';
@@ -100,8 +105,7 @@ inputbarOnly.addEventListener('change', () => {
 			inputBar.className += ' wrong';
 		}
 	}
-});
-
+};
 function isValidIpAdd(ipaddress) {
 	return /^(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$/.test(
 		ipaddress
