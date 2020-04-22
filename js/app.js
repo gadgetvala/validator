@@ -1,23 +1,20 @@
 const inputBar = document.querySelector('.inputbar');
 const inputbarOnly = document.querySelector('#inputbar-only');
-//Alphabet group
+const checkboxList = document.querySelectorAll('input[type=checkbox]');
 const isAlpha = document.querySelector('#isAlpha');
 const isUppercase = document.querySelector('#isUppercase');
 const islowercase = document.querySelector('#islowercase');
 const isAlphanumeric = document.querySelector('#isAlphanumeric');
-//Number group
 const isNumber = document.querySelector('#isNumber');
 const isHexColor = document.querySelector('#isHexColor');
 const isHexadecimal = document.querySelector('#isHexadecimal');
 const isEmail = document.querySelector('#isEmail');
-//Symbol group
 const isIpAdd = document.querySelector('#isIpAdd');
 const isMACAddress = document.querySelector('#isMACAddress');
 const isMD5 = document.querySelector('#isMD5');
 const isSHA1 = document.querySelector('#isSHA1');
 
 inputbarOnly.addEventListener('change', () => {
-	//Alphabet group
 	if (isAlpha.checked) {
 		if (isValidAlpha(inputbarOnly.value)) {
 			inputBar.className = 'inputbar';
@@ -47,7 +44,6 @@ inputbarOnly.addEventListener('change', () => {
 		}
 	}
 
-	//Number Group
 	if (isNumber.checked) {
 		if (isValidNumber(inputbarOnly.value)) {
 			inputBar.className = 'inputbar';
@@ -76,8 +72,6 @@ inputbarOnly.addEventListener('change', () => {
 			inputBar.className += ' wrong';
 		}
 	}
-
-	//Symbol group
 	if (isIpAdd.checked) {
 		if (isValidIpAdd(inputbarOnly.value)) {
 			inputBar.className = 'inputbar';
@@ -158,4 +152,14 @@ function isValidHexColor(code) {
 
 function isValidHexadecimal(code) {
 	return /0[xX][0-9a-fA-F]+/.test(code) ? true : false;
+}
+
+function turnOff(data) {
+	checkboxList.forEach((el) => {
+		if (el.id == data) {
+			el.checked = true;
+		} else {
+			el.checked = false;
+		}
+	});
 }
